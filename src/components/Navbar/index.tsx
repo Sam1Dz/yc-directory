@@ -13,9 +13,17 @@ export default async function Navbar() {
   const Session = await auth();
 
   return (
-    <Container component="div" maxWidth="xxl">
-      <Box
+    <Box
+      component="div"
+      sx={{
+        backgroundColor: 'background.default',
+        boxShadow:
+          '0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)',
+      }}
+    >
+      <Container
         component="nav"
+        maxWidth="xxl"
         sx={{
           height: 64,
           display: 'flex',
@@ -60,7 +68,7 @@ export default async function Navbar() {
             </Box>
           )}
         </Stack>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 }
