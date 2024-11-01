@@ -4,7 +4,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 /* COMPONENTS */
-import Navbar from '@/components/ui/navbar';
+import Navbar from '@/components/Navbar';
 
 /* TYPES */
 import type { ComponentsWithChildrenRequired } from '@/types';

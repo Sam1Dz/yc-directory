@@ -36,7 +36,7 @@ export const StyledImage = styled(NextImage)({});
 export const StyledLink = styled(NextLink)({});
 
 export default function ThemeProvider({ children }: ComponentsWithChildren) {
-  const [mode] = React.useState<PaletteMode>('dark');
+  const [mode] = React.useState<PaletteMode>('light');
 
   const appTheme = createTheme({
     breakpoints: {
@@ -53,7 +53,7 @@ export default function ThemeProvider({ children }: ComponentsWithChildren) {
     palette: {
       mode: mode,
       background: {
-        default: mode === 'light' ? '#FFFFFF' : '#231719',
+        default: mode === 'light' ? '#FFFFFF' : '#121212' /*'#231719'*/,
       },
       primary: {
         main:

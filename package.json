@@ -1,6 +1,6 @@
 {
   "name": "yc-directory",
-  "version": "0.1",
+  "version": "0.2",
   "private": true,
   "packageManager": "npm@10.9.0",
   "engines": {
@@ -26,8 +26,9 @@
     "@mui/material": "^6.1.6",
     "@mui/material-nextjs": "^6.1.6",
     "next": "^15.0.2",
-    "react": "^19.0.0-rc-02c0e824-20241028",
-    "react-dom": "^19.0.0-rc-02c0e824-20241028"
+    "next-auth": "^5.0.0-beta.25",
+    "react": "^19.0.0-rc-603e6108-20241029",
+    "react-dom": "^19.0.0-rc-603e6108-20241029"
   },
   "devDependencies": {
     "@types/node": "^20.17.3",
