@@ -11,8 +11,7 @@ import {
 } from '@/components/Hero/fragment';
 
 /* TYPES */
-import type { ComponentsWithChildren } from '@/types';
-import type { ThemeSx } from '@/styles/global';
+import type { ThemeSx, ComponentsWithChildren } from '@/types';
 
 interface HeroProps {
   heading: {

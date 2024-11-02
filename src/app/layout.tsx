@@ -7,7 +7,7 @@ import ThemeProvider from '@/components/theme';
 import type { Metadata } from 'next';
 import type { ComponentsWithChildrenRequired } from '@/types';
 
-import '../styles/global';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'YC Directory',

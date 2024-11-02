@@ -7,8 +7,7 @@ import { alpha, styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 
 /* TYPES */
-import type { ComponentsWithChildren } from '@/types';
-import type { ThemeSx } from '@/styles/global';
+import type { ThemeSx, ComponentsWithChildren } from '@/types';
 
 export function HeroDecor() {
   return (
@@ -30,13 +29,14 @@ export function HeroDecor() {
 const Heading = styled('h1')(({ theme }) => ({
   padding: `${theme.spacing(1.5)} ${theme.spacing(3)}`,
   margin: `${theme.spacing(2.5)} 0`,
-  backgroundColor: theme.palette.mode === 'light' ? '#000000' : '#FFFFFF',
+  backgroundColor: theme.palette.background.default,
+  borderRadius: theme.spacing(1.5),
   textTransform: 'uppercase',
   fontWeight: 800,
-  color: theme.palette.mode === 'light' ? '#FFFFFF' : '#000000',
+  color: theme.palette.text.primary,
   fontSize: 36,
   lineHeight: 1.27,
-  maxWidth: theme.breakpoints.values.lg,
+  maxWidth: 1024,
   textAlign: 'center',
   [theme.breakpoints.up('sm')]: {
     fontSize: 54,
@@ -51,10 +51,11 @@ export function HeroHeading({
 }
 
 const SubHeading = styled('p')(({ theme }) => ({
+  margin: 0,
   fontWeight: 500,
   fontSize: 20,
-  color: theme.palette.mode === 'light' ? '#000000' : '#FFFFFF',
-  maxWidth: theme.breakpoints.values.lg,
+  color: theme.palette.text.primary,
+  maxWidth: 672,
   textAlign: 'center',
   overflowWrap: 'break-word',
 }));

@@ -1,33 +1,27 @@
 const Color = {
-  neutral: {
-    black: {
-      '100': '#333333',
-      '200': '#141413',
-      '300': '#7D8087',
-      DEFAULT: '#000000',
-    },
-    white: {
-      '100': '#F7F7F7',
-      DEFAULT: '#FFFFFF',
-    },
-  },
   light: {
-    primary: {
-      '100': '#FFE8F0',
-      DEFAULT: '#EE2B69',
+    text: {
+      primary: '#1D1118',
     },
-    secondary: {
-      DEFAULT: '#FBE843',
+    background: {
+      default: '#FAF5F8',
+      paper: '#E9D2DE',
     },
+    primary: '#8E1A56',
+    secondary: '#EEB02b',
+    accent: '#68EE2B',
   },
   dark: {
-    primary: {
-      '100': '#DCC8CF',
-      DEFAULT: '#CD285C',
+    text: {
+      primary: '#EEE2E9',
     },
-    secondary: {
-      DEFAULT: '#D8C83C',
+    background: {
+      default: '#0A0508',
+      paper: '#2C1622',
     },
+    primary: '#E571AD',
+    secondary: '#D49711',
+    accent: '#4fD411',
   },
 };
 

@@ -37,8 +37,7 @@ export function NavbarButton({
     <UIButton
       type={type}
       sx={{
-        color: (theme) =>
-          theme.palette.mode === 'light' ? '#000000' : '#FFFFFF',
+        color: (theme) => theme.palette.text.primary,
       }}
     >
       {children}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import NextForm from 'next/form';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 import localFont from 'next/font/local';
@@ -31,55 +32,62 @@ declare module '@mui/material/styles' {
     xl: true;
     xxl: true;
   }
+  interface Palette {
+    accent: Palette['primary'];
+  }
+  interface PaletteOptions {
+    accent?: PaletteOptions['primary'];
+  }
 }
 
 export const StyledImage = styled(NextImage)({});
 export const StyledLink = styled(NextLink)({});
+export const StyledForm = styled(NextForm)({});
 
 const FontWorkSans = localFont({
   src: [
     {
-      path: '../../fonts/WorkSans-Black.ttf',
+      path: '../../app/fonts/WorkSans-Black.ttf',
       weight: '900',
       style: 'normal',
     },
     {
-      path: '../../fonts/WorkSans-ExtraBold.ttf',
+      path: '../../app/fonts/WorkSans-ExtraBold.ttf',
       weight: '800',
       style: 'normal',
     },
     {
-      path: '../../fonts/WorkSans-Bold.ttf',
+      path: '../../app/fonts/WorkSans-Bold.ttf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../../fonts/WorkSans-SemiBold.ttf',
+      path: '../../app/fonts/WorkSans-SemiBold.ttf',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../../fonts/WorkSans-Medium.ttf',
+      path: '../../app/fonts/WorkSans-Medium.ttf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../fonts/WorkSans-Regular.ttf',
+      path: '../../app/fonts/WorkSans-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../fonts/WorkSans-Black.ttf',
+      path: '../../app/fonts/WorkSans-Black.ttf',
       weight: '900',
       style: 'normal',
     },
     {
-      path: '../../fonts/WorkSans-Thin.ttf',
+      path: '../../app/fonts/WorkSans-Thin.ttf',
       weight: '200',
       style: 'normal',
     },
     {
-      path: '../../fonts/WorkSans-ExtraLight.ttf',
+      path: '../../app/fonts/WorkSans-ExtraLight.ttf',
       weight: '100',
       style: 'normal',
     },
@@ -87,9 +95,9 @@ const FontWorkSans = localFont({
 });
 
 export default function ThemeProvider({ children }: ComponentsWithChildren) {
-  const [mode] = React.useState<PaletteMode>('dark');
+  const [mode] = React.useState<PaletteMode>('light');
 
-  const appTheme = createTheme({
+  let appTheme = createTheme({
     breakpoints: {
       values: {
         xxs: 0,
@@ -108,20 +116,34 @@ export default function ThemeProvider({ children }: ComponentsWithChildren) {
       mode: mode,
       background: {
         default:
-          mode === 'light' ? '#FFFFFF' : '#231719' /*'#121212 || #231719'*/,
+          mode === 'light'
+            ? Color.light.background.default
+            : Color.dark.background.default,
+        paper:
+          mode === 'light'
+            ? Color.light.background.paper
+            : Color.dark.background.paper,
       },
       primary: {
-        main:
-          mode === 'light'
-            ? Color.light.primary.DEFAULT
-            : Color.dark.primary.DEFAULT,
+        main: mode === 'light' ? Color.light.primary : Color.dark.primary,
       },
       secondary: {
-        main:
-          mode === 'light'
-            ? Color.light.secondary.DEFAULT
-            : Color.dark.secondary.DEFAULT,
+        main: mode === 'light' ? Color.light.secondary : Color.dark.secondary,
       },
+      text: {
+        primary:
+          mode === 'light' ? Color.light.text.primary : Color.dark.text.primary,
+      },
+    },
+  });
+  appTheme = createTheme(appTheme, {
+    palette: {
+      accent: appTheme.palette.augmentColor({
+        color: {
+          main: mode === 'light' ? Color.light.accent : Color.dark.accent,
+        },
+        name: 'accent',
+      }),
     },
   });
 
