@@ -20,7 +20,19 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 function UIButton(props: ButtonProps) {
-  return <StyledButton {...props}>{props.children}</StyledButton>;
+  return (
+    <StyledButton
+      {...props}
+      sx={{
+        ...props.sx,
+        boxShadow: 'none',
+        '&:active': { boxShadow: 'none' },
+        '&:hover': { boxShadow: 'none' },
+      }}
+    >
+      {props.children}
+    </StyledButton>
+  );
 }
 
 UIButton.displayName = 'UIButton';

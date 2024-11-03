@@ -50,7 +50,6 @@ export function SearchFormSubmit() {
     </SearchButton>
   );
 }
-
 export function SearchFormReset() {
   const handleReset = () => {
     const form = document.getElementById('search-form') as HTMLFormElement;

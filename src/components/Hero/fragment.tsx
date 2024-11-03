@@ -1,3 +1,4 @@
+// Need Change again for this file
 'use client';
 
 import React from 'react';
@@ -5,6 +6,9 @@ import React from 'react';
 /* MATERIAL UI */
 import { alpha, styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
+
+/* COMPONENTS */
+import { StyledH1, StyledP } from '@/components/theme';
 
 /* TYPES */
 import type { ThemeSx, ComponentsWithChildren } from '@/types';
@@ -26,7 +30,7 @@ export function HeroDecor() {
   );
 }
 
-const Heading = styled('h1')(({ theme }) => ({
+const Heading = styled(StyledH1)(({ theme }) => ({
   padding: `${theme.spacing(1.5)} ${theme.spacing(3)}`,
   margin: `${theme.spacing(2.5)} 0`,
   backgroundColor: theme.palette.background.default,
@@ -50,7 +54,7 @@ export function HeroHeading({
   return <Heading sx={sx}>{children}</Heading>;
 }
 
-const SubHeading = styled('p')(({ theme }) => ({
+const SubHeading = styled(StyledP)(({ theme }) => ({
   margin: 0,
   fontWeight: 500,
   fontSize: 20,

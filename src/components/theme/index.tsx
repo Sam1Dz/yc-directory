@@ -40,9 +40,14 @@ declare module '@mui/material/styles' {
   }
 }
 
+export const StyledLink = styled(NextLink)({ cursor: 'pointer' });
 export const StyledImage = styled(NextImage)({});
-export const StyledLink = styled(NextLink)({});
 export const StyledForm = styled(NextForm)({});
+
+export const StyledH1 = styled('h1')({});
+export const StyledH3 = styled('h3')({});
+export const StyledP = styled('p')({});
+export const StyledSpan = styled('p')({});
 
 const FontWorkSans = localFont({
   src: [
@@ -95,7 +100,7 @@ const FontWorkSans = localFont({
 });
 
 export default function ThemeProvider({ children }: ComponentsWithChildren) {
-  const [mode] = React.useState<PaletteMode>('light');
+  const [mode] = React.useState<PaletteMode>('dark');
 
   let appTheme = createTheme({
     breakpoints: {

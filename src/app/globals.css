@@ -2,3 +2,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+a,
+ul,
+li,
+h1,
+h3,
+p,
+span {
+  all: unset;
+}

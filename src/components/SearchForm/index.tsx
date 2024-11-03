@@ -31,8 +31,8 @@ export default function SearchForm({ query }: { query?: string }) {
         flexDirection: 'row',
         alignItems: 'center',
         gap: 2.5,
-        mt: 8,
-        px: 3,
+        mt: 4,
+        px: 2.5,
       }}
     >
       <SearchInput
