@@ -47,7 +47,7 @@ export const StyledForm = styled(NextForm)({});
 export const StyledH1 = styled('h1')({});
 export const StyledH3 = styled('h3')({});
 export const StyledP = styled('p')({});
-export const StyledSpan = styled('p')({});
+export const StyledSpan = styled('span')({});
 
 const FontWorkSans = localFont({
   src: [
