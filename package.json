@@ -1,0 +1,47 @@
+{
+  "name": "yc-directory",
+  "version": "2025.622.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "lint": "bunx --bun eslint .",
+    "prettier": "prettier --write .",
+    "outdated": "bunx --bun npm-check-updates --format group -i"
+  },
+  "author": "Sam1Dz",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20",
+    "npm": ">=9.6.4",
+    "bun": ">=1.1"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
+    "@tanstack/react-router": "^1.121.27",
+    "@tanstack/react-start": "^1.121.32",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.522.0",
+    "postcss": "^8.5.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.10",
+    "vite": "^6.3.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "eslint": "^9.29.0",
+    "prettier": "^3.5.3",
+    "tw-animate-css": "^1.3.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.1",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
