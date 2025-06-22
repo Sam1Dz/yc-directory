@@ -1,7 +1,13 @@
 {
   "name": "yc-directory",
-  "version": "2025.622.0",
   "description": "",
+  "version": "2025.622.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sam1Dz/yc-directory.git"
+  },
+  "author": "Sam1Dz",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,8 +18,6 @@
     "prettier": "prettier --write .",
     "outdated": "bunx --bun npm-check-updates --format group -i"
   },
-  "author": "Sam1Dz",
-  "license": "MIT",
   "engines": {
     "node": ">=20",
     "npm": ">=9.6.4",
