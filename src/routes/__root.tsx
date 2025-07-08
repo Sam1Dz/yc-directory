@@ -6,10 +6,11 @@ import {
   HeadContent,
   Scripts,
 } from '@tanstack/react-router';
+import globalsCss from '~/styles/globals.css?url';
 import mantineCssUrl from '@mantine/core/styles.css?url';
 import React from 'react';
 
-import Providers from '~/components/providers';
+import { Providers } from '~/components/providers';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -26,6 +27,10 @@ export const Route = createRootRoute({
       },
     ],
     links: [
+      {
+        rel: 'stylesheet',
+        href: globalsCss,
+      },
       {
         rel: 'stylesheet',
         href: mantineCssUrl,

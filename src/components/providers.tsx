@@ -1,8 +1,12 @@
 import { MantineProvider } from '@mantine/core';
 import React from 'react';
 
-export default function Providers({ children }: React.PropsWithChildren) {
+import { theme } from '~/libs/mantine';
+
+export function Providers({ children }: React.PropsWithChildren) {
   return (
-    <MantineProvider defaultColorScheme="auto">{children}</MantineProvider>
+    <MantineProvider defaultColorScheme="auto" theme={theme}>
+      {children}
+    </MantineProvider>
   );
 }
