@@ -1,4 +1,6 @@
 /// <reference types="vite/client" />
+import React from 'react';
+import mantineCssUrl from '@mantine/core/styles.css?url';
 import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
 import {
   Outlet,
@@ -6,11 +8,11 @@ import {
   HeadContent,
   Scripts,
 } from '@tanstack/react-router';
-import globalsCss from '~/styles/globals.css?url';
-import mantineCssUrl from '@mantine/core/styles.css?url';
-import React from 'react';
 
+import globalsCss from '~/styles/globals.css?url';
 import { Providers } from '~/components/providers';
+
+import faviconIco from './favicon.ico?url';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -27,6 +29,10 @@ export const Route = createRootRoute({
       },
     ],
     links: [
+      {
+        rel: 'icon',
+        href: faviconIco,
+      },
       {
         rel: 'stylesheet',
         href: globalsCss,
