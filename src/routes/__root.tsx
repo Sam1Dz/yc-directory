@@ -1,13 +1,15 @@
-import React from 'react';
+/// <reference types="vite/client" />
+import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
 import {
   Outlet,
   createRootRoute,
   HeadContent,
   Scripts,
 } from '@tanstack/react-router';
+import mantineCssUrl from '@mantine/core/styles.css?url';
+import React from 'react';
 
-import appCss from '~/styles/app.css?url';
-import { ThemeProvider } from '~/components/theme-provider';
+import Providers from '~/components/providers';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -20,13 +22,13 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Vite + TanStack Start',
+        title: 'TanStack Start w/ Mantine',
       },
     ],
     links: [
       {
         rel: 'stylesheet',
-        href: appCss,
+        href: mantineCssUrl,
       },
     ],
   }),
@@ -36,34 +38,18 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <Providers>
         <Outlet />
-      </ThemeProvider>
+      </Providers>
     </RootDocument>
   );
 }
 
-function RootDocument({ children }: Readonly<{ children: React.ReactNode }>) {
+function RootDocument({ children }: Readonly<React.PropsWithChildren>) {
   return (
-    <html>
+    <html lang="en" {...mantineHtmlProps}>
       <head>
-        {/* Prevent theme flash */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var storageKey = 'vite-ui-theme';
-                  var theme = localStorage.getItem(storageKey);
-                  if (!theme || theme === 'system') {
-                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  }
-                  document.documentElement.classList.add(theme);
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
+        <ColorSchemeScript defaultColorScheme="auto" />
         <HeadContent />
       </head>
       <body>
