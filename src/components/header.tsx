@@ -8,8 +8,10 @@ import {
 } from '@mantine/core';
 
 import styles from '~/styles/components/header.module.css';
+import { authClient } from '~/libs/auth/client';
 
 export function Header() {
+  const { data: session, isPending } = authClient.useSession();
   const computedColorScheme = useComputedColorScheme();
 
   return (
@@ -28,10 +30,31 @@ export function Header() {
           />
         </Link>
 
-        <Group align="center" gap="lg">
-          <Button variant="subtle">Create</Button>
-          <Button>Login</Button>
-        </Group>
+        {!isPending &&
+          (session ? (
+            <Group align="center" gap="lg">
+              <Button variant="subtle">Create</Button>
+              <Button
+                onClick={async () => {
+                  await authClient.signOut();
+                }}
+              >
+                Logout
+              </Button>
+            </Group>
+          ) : (
+            <Group align="center" gap="lg">
+              <Button
+                onClick={async () => {
+                  await authClient.signIn.social({
+                    provider: 'github',
+                  });
+                }}
+              >
+                Login
+              </Button>
+            </Group>
+          ))}
       </Group>
     </Box>
   );

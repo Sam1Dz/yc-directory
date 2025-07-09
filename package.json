@@ -1,7 +1,7 @@
 {
   "name": "yc-directory",
   "description": "",
-  "version": "2025.708.4",
+  "version": "2025.709.5",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sam1Dz/yc-directory.git"
@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "start": "node .output/server/index.mjs",
+    "start": "node --env-file=.env.local .output/server/index.mjs",
     "lint": "bunx --bun eslint .",
     "prettier": "prettier --write .",
     "outdated": "bunx --bun npm-check-updates --format group -i"
@@ -29,9 +29,10 @@
     "@t3-oss/env-core": "^0.13.8",
     "@tanstack/react-router": "^1.125.6",
     "@tanstack/react-start": "^1.125.6",
+    "better-auth": "^1.2.12",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "zod": "^3.25.75"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

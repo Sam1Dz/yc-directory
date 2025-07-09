@@ -8,52 +8,125 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { createServerRootRoute } from '@tanstack/react-start/server'
 
-const IndexRoute = IndexRouteImport.update({
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as mainRouteRouteImport } from './routes/(main)/route'
+import { Route as mainIndexRouteImport } from './routes/(main)/index'
+import { ServerRoute as ApiAuthSplatServerRouteImport } from './routes/api/auth/$'
+
+const rootServerRouteImport = createServerRootRoute()
+
+const mainRouteRoute = mainRouteRouteImport.update({
+  id: '/(main)',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const mainIndexRoute = mainIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => mainRouteRoute,
+} as any)
+const ApiAuthSplatServerRoute = ApiAuthSplatServerRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootServerRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof mainIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/': typeof mainIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/(main)': typeof mainRouteRouteWithChildren
+  '/(main)/': typeof mainIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
   to: '/'
-  id: '__root__' | '/'
+  id: '__root__' | '/(main)' | '/(main)/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  mainRouteRoute: typeof mainRouteRouteWithChildren
+}
+export interface FileServerRoutesByFullPath {
+  '/api/auth/$': typeof ApiAuthSplatServerRoute
+}
+export interface FileServerRoutesByTo {
+  '/api/auth/$': typeof ApiAuthSplatServerRoute
+}
+export interface FileServerRoutesById {
+  __root__: typeof rootServerRouteImport
+  '/api/auth/$': typeof ApiAuthSplatServerRoute
+}
+export interface FileServerRouteTypes {
+  fileServerRoutesByFullPath: FileServerRoutesByFullPath
+  fullPaths: '/api/auth/$'
+  fileServerRoutesByTo: FileServerRoutesByTo
+  to: '/api/auth/$'
+  id: '__root__' | '/api/auth/$'
+  fileServerRoutesById: FileServerRoutesById
+}
+export interface RootServerRouteChildren {
+  ApiAuthSplatServerRoute: typeof ApiAuthSplatServerRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/(main)': {
+      id: '/(main)'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+      preLoaderRoute: typeof mainRouteRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/(main)/': {
+      id: '/(main)/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof mainIndexRouteImport
+      parentRoute: typeof mainRouteRoute
+    }
+  }
+}
+declare module '@tanstack/react-start/server' {
+  interface ServerFileRoutesByPath {
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatServerRouteImport
+      parentRoute: typeof rootServerRouteImport
     }
   }
 }
 
+interface mainRouteRouteChildren {
+  mainIndexRoute: typeof mainIndexRoute
+}
+
+const mainRouteRouteChildren: mainRouteRouteChildren = {
+  mainIndexRoute: mainIndexRoute,
+}
+
+const mainRouteRouteWithChildren = mainRouteRoute._addFileChildren(
+  mainRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  mainRouteRoute: mainRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+const rootServerRouteChildren: RootServerRouteChildren = {
+  ApiAuthSplatServerRoute: ApiAuthSplatServerRoute,
+}
+export const serverRouteTree = rootServerRouteImport
+  ._addFileChildren(rootServerRouteChildren)
+  ._addFileTypes<FileServerRouteTypes>()
