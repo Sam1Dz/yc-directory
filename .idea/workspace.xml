@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85e29370-93dd-4d90-8884-471ecf4b0c37" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/providers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/providers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configs/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/env.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routeTree.gen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routeTree.gen.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(main)/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="86d80ad3-77d2-428e-8d07-191889de4e6f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,31 +13,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
-        <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Sam1Dz&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Sam1Dz/yc-directory.git&quot;,
-    &quot;accountId&quot;: &quot;a6f1f582-07d5-4b0a-bf45-2298e9327008&quot;
-  }
-}</component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2zZiYSeSOJhxXDWReIrkFsWck1I" />
+  <component name="ProjectId" id="2zi5VHWwhXwLjRUGF5jCa972Bg1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,17 +32,14 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Applications/Portfolio/yc-directory&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;bun&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Projects\\Applications\\Portfolio\\yc-directory\\node_modules\\prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\Applications\\Portfolio\\yc-directory\\node_modules\\typescript\\lib&quot;,
@@ -88,12 +57,25 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\Applications\Portfolio\yc-directory\src\libs\auth" />
-      <recent name="D:\Projects\Applications\Portfolio\yc-directory\src\libs" />
-      <recent name="D:\Projects\Applications\Portfolio\yc-directory\src" />
-      <recent name="D:\Projects\Applications\Portfolio\yc-directory\src\routes\(main)" />
-      <recent name="D:\Projects\Applications\Portfolio\yc-directory\src\components\layout" />
+      <recent name="D:\Projects\Applications\Portfolio\yc-directory\src\routes\api\auth" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -104,21 +86,15 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="85e29370-93dd-4d90-8884-471ecf4b0c37" name="Changes" comment="" />
-      <created>1751945043244</created>
+      <changelist id="86d80ad3-77d2-428e-8d07-191889de4e6f" name="Changes" comment="" />
+      <created>1752201079129</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1751945043244</updated>
-      <workItem from="1751945044612" duration="675000" />
-      <workItem from="1751945751051" duration="1191000" />
-      <workItem from="1751947451675" duration="4119000" />
-      <workItem from="1751956170238" duration="10312000" />
-      <workItem from="1751978708721" duration="5573000" />
-      <workItem from="1752031341878" duration="8759000" />
-      <workItem from="1752043047525" duration="6992000" />
-      <workItem from="1752050597481" duration="4719000" />
-      <workItem from="1752062616288" duration="2320000" />
-      <workItem from="1752069740279" duration="2540000" />
+      <updated>1752201079129</updated>
+      <workItem from="1752201081989" duration="1202000" />
+      <workItem from="1752202309310" duration="12367000" />
+      <workItem from="1752220203675" duration="8036000" />
+      <workItem from="1752235699715" duration="3773000" />
     </task>
     <servers />
   </component>

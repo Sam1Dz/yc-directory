@@ -1,18 +1,22 @@
 // @ts-check
 
-import mantine from 'eslint-config-mantine';
+import eslint from '@eslint/js';
 import tslint from 'typescript-eslint';
 
-export default [
+export default tslint.config(
+  eslint.configs.recommended,
+  tslint.configs.recommended,
+  tslint.configs.stylistic,
   {
-    ignores: [
-      '**/node_modules/**',
-      '**/.output/**',
-      '**/.tanstack/**',
-      '**/.nitro/**',
-      '**/dist/**',
-      '**/build/**',
-    ],
+    rules: {
+      'no-console': ['warn', { allow: ['error', 'warn'] }],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
+    },
   },
-  ...tslint.config(...mantine, ...tslint.configs.stylistic),
-];
+);

@@ -1,4 +1,13 @@
 .header {
+  padding: 0.75rem 0;
+}
+
+.menuButton:active {
+  transform: translateY(calc(0.0625rem * var(--mantine-scale)));
+}
+
+@media (max-width: 88em) {
+  .header {
     padding: 0.75rem 1.25rem;
-    box-shadow: var(--mantine-shadow-sm);
+  }
 }

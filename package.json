@@ -1,7 +1,7 @@
 {
   "name": "yc-directory",
   "description": "",
-  "version": "2025.709.5",
+  "version": "2025.711.6",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sam1Dz/yc-directory.git"
@@ -19,38 +19,38 @@
     "outdated": "bunx --bun npm-check-updates --format group -i"
   },
   "engines": {
-    "node": ">=20",
-    "npm": ">=9.6.4",
-    "bun": ">=1.1"
+    "node": ">=22.12",
+    "npm": ">=10.9.0",
+    "bun": ">=1.2"
   },
   "dependencies": {
     "@mantine/core": "^8.1.3",
     "@mantine/hooks": "^8.1.3",
     "@t3-oss/env-core": "^0.13.8",
     "@tanstack/react-router": "^1.125.6",
-    "@tanstack/react-start": "^1.125.6",
-    "better-auth": "^1.2.12",
+    "@tanstack/react-start": "^1.126.1",
+    "axios": "^1.10.0",
+    "crypto-js": "^4.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "zod": "^3.25.76"
+    "react-icons": "^5.5.0",
+    "zod": "^4.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
-    "@fontsource-variable/geist": "^5.2.6",
-    "@fontsource-variable/geist-mono": "^5.2.6",
+    "@fontsource-variable/work-sans": "^5.2.6",
+    "@types/crypto-js": "^4.2.2",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
     "eslint": "^9.30.1",
-    "eslint-config-mantine": "^4.0.3",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.5",
     "postcss": "^8.5.6",
     "postcss-preset-mantine": "^1.18.0",
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.6.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.36.0",
-    "vite": "^7.0.3",
+    "vite": "^7.0.4",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }

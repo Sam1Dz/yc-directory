@@ -8,14 +8,10 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createServerRootRoute } from '@tanstack/react-start/server'
-
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as mainRouteRouteImport } from './routes/(main)/route'
 import { Route as mainIndexRouteImport } from './routes/(main)/index'
-import { ServerRoute as ApiAuthSplatServerRouteImport } from './routes/api/auth/$'
-
-const rootServerRouteImport = createServerRootRoute()
+import { Route as AuthCallbackRouteImport } from './routes/auth/callback'
 
 const mainRouteRoute = mainRouteRouteImport.update({
   id: '/(main)',
@@ -26,54 +22,37 @@ const mainIndexRoute = mainIndexRouteImport.update({
   path: '/',
   getParentRoute: () => mainRouteRoute,
 } as any)
-const ApiAuthSplatServerRoute = ApiAuthSplatServerRouteImport.update({
-  id: '/api/auth/$',
-  path: '/api/auth/$',
-  getParentRoute: () => rootServerRouteImport,
+const AuthCallbackRoute = AuthCallbackRouteImport.update({
+  id: '/auth/callback',
+  path: '/auth/callback',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof mainIndexRoute
+  '/auth/callback': typeof AuthCallbackRoute
 }
 export interface FileRoutesByTo {
+  '/auth/callback': typeof AuthCallbackRoute
   '/': typeof mainIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/(main)': typeof mainRouteRouteWithChildren
+  '/auth/callback': typeof AuthCallbackRoute
   '/(main)/': typeof mainIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/auth/callback'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/(main)' | '/(main)/'
+  to: '/auth/callback' | '/'
+  id: '__root__' | '/(main)' | '/auth/callback' | '/(main)/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   mainRouteRoute: typeof mainRouteRouteWithChildren
-}
-export interface FileServerRoutesByFullPath {
-  '/api/auth/$': typeof ApiAuthSplatServerRoute
-}
-export interface FileServerRoutesByTo {
-  '/api/auth/$': typeof ApiAuthSplatServerRoute
-}
-export interface FileServerRoutesById {
-  __root__: typeof rootServerRouteImport
-  '/api/auth/$': typeof ApiAuthSplatServerRoute
-}
-export interface FileServerRouteTypes {
-  fileServerRoutesByFullPath: FileServerRoutesByFullPath
-  fullPaths: '/api/auth/$'
-  fileServerRoutesByTo: FileServerRoutesByTo
-  to: '/api/auth/$'
-  id: '__root__' | '/api/auth/$'
-  fileServerRoutesById: FileServerRoutesById
-}
-export interface RootServerRouteChildren {
-  ApiAuthSplatServerRoute: typeof ApiAuthSplatServerRoute
+  AuthCallbackRoute: typeof AuthCallbackRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -92,16 +71,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainIndexRouteImport
       parentRoute: typeof mainRouteRoute
     }
-  }
-}
-declare module '@tanstack/react-start/server' {
-  interface ServerFileRoutesByPath {
-    '/api/auth/$': {
-      id: '/api/auth/$'
-      path: '/api/auth/$'
-      fullPath: '/api/auth/$'
-      preLoaderRoute: typeof ApiAuthSplatServerRouteImport
-      parentRoute: typeof rootServerRouteImport
+    '/auth/callback': {
+      id: '/auth/callback'
+      path: '/auth/callback'
+      fullPath: '/auth/callback'
+      preLoaderRoute: typeof AuthCallbackRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -120,13 +95,8 @@ const mainRouteRouteWithChildren = mainRouteRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   mainRouteRoute: mainRouteRouteWithChildren,
+  AuthCallbackRoute: AuthCallbackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-const rootServerRouteChildren: RootServerRouteChildren = {
-  ApiAuthSplatServerRoute: ApiAuthSplatServerRoute,
-}
-export const serverRouteTree = rootServerRouteImport
-  ._addFileChildren(rootServerRouteChildren)
-  ._addFileTypes<FileServerRouteTypes>()
