@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import {
+  Box,
   Button,
   Container,
   Group,
@@ -16,34 +17,36 @@ export function Header() {
   const computedColorScheme = useComputedColorScheme();
 
   return (
-    <Container size="xl" component="header" className={styles.header}>
-      <Group align="center" component="nav" justify="space-between">
-        <Link to="/">
-          <Image
-            h={30}
-            w={144}
-            alt="logo"
-            src={
-              computedColorScheme === 'light'
-                ? '/logo_light.png'
-                : '/logo_dark.png'
-            }
-          />
-        </Link>
-
-        {status !== 'loading' &&
-          (status === 'authenticated' ? (
-            <NavHeader
-              user={{
-                username: session!.login,
-                name: session!.name,
-                image: session!.avatar_url,
-              }}
+    <Box component="header" className={styles.header}>
+      <Container size="xl">
+        <Group align="center" component="nav" justify="space-between">
+          <Link to="/">
+            <Image
+              h={30}
+              w={144}
+              alt="logo"
+              src={
+                computedColorScheme === 'light'
+                  ? '/logo_light.png'
+                  : '/logo_dark.png'
+              }
             />
-          ) : (
-            <Button onClick={login}>Login</Button>
-          ))}
-      </Group>
-    </Container>
+          </Link>
+
+          {status !== 'loading' &&
+            (status === 'authenticated' ? (
+              <NavHeader
+                user={{
+                  username: session!.login,
+                  name: session!.name,
+                  image: session!.avatar_url,
+                }}
+              />
+            ) : (
+              <Button onClick={login}>Login</Button>
+            ))}
+        </Group>
+      </Container>
+    </Box>
   );
 }

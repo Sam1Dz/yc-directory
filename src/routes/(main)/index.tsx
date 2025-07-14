@@ -1,6 +1,7 @@
 import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
-import { Code, Text, Title } from '@mantine/core';
+
+import { HeroMain } from '~/components/(main)/hero';
 
 export const Route = createFileRoute('/(main)/')({
   component: Home,
@@ -8,10 +9,8 @@ export const Route = createFileRoute('/(main)/')({
 
 function Home() {
   return (
-    <>
-      <Title order={1}>TanStack Start w/ Mantine</Title>
-      <Text>Hello World!</Text>
-      <Code>Written in Typescript JSX</Code>
-    </>
+    <React.Fragment>
+      <HeroMain />
+    </React.Fragment>
   );
 }
