@@ -13,7 +13,7 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 
-import styles from '~/styles/components/header.module.css';
+import styles from '~/styles/components/header.module.scss';
 import { useAuth } from '~/libs/auth';
 import { mantineBreakpoints } from '~/libs/mantine/breakpoint';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from '@tanstack/react-router';
 import {
   Box,
@@ -8,7 +9,7 @@ import {
   useComputedColorScheme,
 } from '@mantine/core';
 
-import styles from '~/styles/components/header.module.css';
+import styles from '~/styles/components/header.module.scss';
 import { useAuth } from '~/libs/auth';
 import { NavHeader } from '~/components/header/nav';
 
@@ -16,11 +17,13 @@ export function Header() {
   const { status, session, login } = useAuth();
   const computedColorScheme = useComputedColorScheme();
 
+  const [isAuthenticating, setIsAuthenticating] = React.useState(false);
+
   return (
     <Box component="header" className={styles.header}>
       <Container size="xl">
         <Group align="center" component="nav" justify="space-between">
-          <Link to="/">
+          <Link to="/" search={{ query: '' }}>
             <Image
               h={30}
               w={144}
@@ -43,7 +46,15 @@ export function Header() {
                 }}
               />
             ) : (
-              <Button onClick={login}>Login</Button>
+              <Button
+                loading={isAuthenticating}
+                onClick={() => {
+                  setIsAuthenticating(true);
+                  login();
+                }}
+              >
+                Login
+              </Button>
             ))}
         </Group>
       </Container>

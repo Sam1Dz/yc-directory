@@ -9,7 +9,7 @@ import {
   Scripts,
 } from '@tanstack/react-router';
 
-import globalsCss from '~/styles/globals.css?url';
+import globalsCss from '~/styles/globals.scss?url';
 import { Providers } from '~/components/providers';
 
 import faviconIco from '~/favicon.ico?url';

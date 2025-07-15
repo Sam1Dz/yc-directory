@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  margin-top: 2rem;
+  padding-left: 1.25rem;
+  padding-right: 0.5rem;
+  border-radius: var(--mantine-radius-xl);
+  max-width: var(--mantine-breakpoint-sm);
+
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--mantine-color-dark-7);
+  background-color: white;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: black;
+  }
+
+  .wrapper {
+    flex: 1;
+  }
+
+  .input {
+    color: black;
+
+    &::placeholder {
+      color: var(--mantine-color-dark-3);
+    }
+  }
+}

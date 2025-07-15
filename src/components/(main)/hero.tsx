@@ -2,10 +2,19 @@ import React from 'react';
 import { useMediaQuery } from '@mantine/hooks';
 import { Stack, Text, Title, useComputedColorScheme } from '@mantine/core';
 
-import styles from '~/styles/components/(main)/hero.module.css';
+import styles from '~/styles/components/(main)/hero.module.scss';
 import { mantineBreakpoints } from '~/libs/mantine/breakpoint';
 
-export function HeroMain() {
+interface HeroMainProps {
+  heading: React.ReactNode | string;
+  subHeading?: React.ReactNode | string;
+}
+
+export function HeroMain({
+  heading,
+  subHeading,
+  children,
+}: React.PropsWithChildren<HeroMainProps>) {
   const isMobile = useMediaQuery(`(max-width: ${mantineBreakpoints.xs})`);
   const computedColorScheme = useComputedColorScheme();
 
@@ -28,20 +37,22 @@ export function HeroMain() {
         fz={!isMobile ? 54 : 36}
         className={styles.heading}
       >
-        Pitch Your Startup,
-        <br />
-        Connect With Entrepreneurs
+        {heading}
       </Title>
 
-      <Text
-        c="white"
-        size="xl"
-        ta="center"
-        fw={500}
-        className={styles.subheading}
-      >
-        Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competitions.
-      </Text>
+      {subHeading && (
+        <Text
+          c="white"
+          ta="center"
+          fw={500}
+          size={!isMobile ? 'xl' : 'lg'}
+          className={styles.subHeading}
+        >
+          {subHeading}
+        </Text>
+      )}
+
+      {children}
     </Stack>
   );
 }
