@@ -1,3 +1,5 @@
+import { createTheme } from '@mantine/core';
+
 export const mantineBreakpoints = {
   xs: '36em',
   sm: '48em',
@@ -5,3 +7,7 @@ export const mantineBreakpoints = {
   lg: '75em',
   xl: '88em',
 };
+
+export const themeBreakpoints = createTheme({
+  breakpoints: mantineBreakpoints,
+});

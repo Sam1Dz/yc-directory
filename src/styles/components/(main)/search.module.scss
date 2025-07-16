@@ -1,19 +1,17 @@
+@use '../../core/mantine' as mantine;
+
 .container {
   width: 100%;
-  margin-top: 2rem;
-  padding-left: 1.25rem;
-  padding-right: 0.5rem;
+  margin-top: mantine.rem(32px);
+  padding-left: mantine.rem(20px);
+  padding-right: mantine.rem(8px);
   border-radius: var(--mantine-radius-xl);
-  max-width: var(--mantine-breakpoint-sm);
+  max-width: mantine.$mantine-breakpoint-sm;
 
-  border-width: 3px;
+  border-width: mantine.rem(3px);
   border-style: solid;
-  border-color: var(--mantine-color-dark-7);
   background-color: white;
-
-  @media (prefers-color-scheme: dark) {
-    border-color: black;
-  }
+  border-color: light-dark(var(--mantine-color-dark-7), black);
 
   .wrapper {
     flex: 1;

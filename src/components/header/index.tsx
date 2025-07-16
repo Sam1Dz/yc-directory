@@ -9,7 +9,7 @@ import {
   useComputedColorScheme,
 } from '@mantine/core';
 
-import styles from '~/styles/components/header.module.scss';
+import classes from '~/styles/components/header.module.scss';
 import { useAuth } from '~/libs/auth';
 import { NavHeader } from '~/components/header/nav';
 
@@ -20,7 +20,7 @@ export function Header() {
   const [isAuthenticating, setIsAuthenticating] = React.useState(false);
 
   return (
-    <Box component="header" className={styles.header}>
+    <Box component="header" className={classes.header}>
       <Container size="xl">
         <Group align="center" component="nav" justify="space-between">
           <Link to="/" search={{ query: '' }}>

@@ -4,7 +4,7 @@ import { useNavigate } from '@tanstack/react-router';
 import { useMediaQuery } from '@mantine/hooks';
 import { ActionIcon, Group, Input } from '@mantine/core';
 
-import styles from '~/styles/components/(main)/search.module.scss';
+import classes from '~/styles/components/(main)/search.module.scss';
 import { mantineBreakpoints } from '~/libs/mantine/breakpoint';
 
 interface SearchMainProps {
@@ -44,7 +44,11 @@ export function SearchMain({ query }: SearchMainProps) {
   };
 
   return (
-    <form id="search-form" onSubmit={handleSubmit} className={styles.container}>
+    <form
+      id="search-form"
+      onSubmit={handleSubmit}
+      className={classes.container}
+    >
       <Group gap="lg">
         <Input
           name="query"
@@ -53,8 +57,8 @@ export function SearchMain({ query }: SearchMainProps) {
           defaultValue={query}
           size={!isMobile ? 'xl' : 'lg'}
           classNames={{
-            wrapper: styles.wrapper,
-            input: styles.input,
+            wrapper: classes.wrapper,
+            input: classes.input,
           }}
         />
 

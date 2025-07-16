@@ -1,0 +1,14 @@
+@use '../../core/mantine' as mantine;
+@use '../../core/utils' as utils;
+
+.container {
+  padding: mantine.rem(40px) mantine.rem(24px);
+
+  .search_query {
+    @include utils.text-30-semibold;
+  }
+
+  .card_lists {
+    margin-top: mantine.rem(28px);
+  }
+}

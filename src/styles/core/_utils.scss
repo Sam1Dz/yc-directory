@@ -1,0 +1,26 @@
+@use './_components' as components;
+
+@mixin text-30-extrabold {
+  @include components.typography(1.875rem, 800);
+}
+@mixin text-30-bold {
+  @include components.typography(1.875rem, 700);
+}
+@mixin text-30-semibold {
+  @include components.typography(1.875rem, 600);
+}
+@mixin text-26-semibold {
+  @include components.typography(1.625rem, 600);
+}
+@mixin text-24-black {
+  @include components.typography(1.5rem, 900);
+}
+@mixin text-20-medium {
+  @include components.typography(1.25rem, 500);
+}
+@mixin text-16-medium {
+  @include components.typography(1rem, 500);
+}
+@mixin text-14-normal {
+  @include components.typography(0.875rem, 400);
+}

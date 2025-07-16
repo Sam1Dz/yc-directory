@@ -1,6 +1,8 @@
 import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
+import { Container, SimpleGrid, Text } from '@mantine/core';
 
+import classes from '~/styles/routes/(main)/index.module.scss';
 import { HeroMain } from '~/components/(main)/hero';
 import { SearchMain } from '~/components/(main)/search';
 
@@ -28,6 +30,25 @@ function Home() {
       >
         <SearchMain query={query} />
       </HeroMain>
+
+      <Container component="section" size="xl" className={classes.container}>
+        <Text className={classes.search_query}>
+          {query ? `Search results for "${query}"` : 'All Startups'}
+        </Text>
+
+        <SimpleGrid
+          spacing="xl"
+          cols={{ base: 2, sm: 3 }}
+          className={classes.card_lists}
+        >
+          <article>Card Here</article>
+          <article>Card Here</article>
+          <article>Card Here</article>
+          <article>Card Here</article>
+          <article>Card Here</article>
+          <article>Card Here</article>
+        </SimpleGrid>
+      </Container>
     </React.Fragment>
   );
 }

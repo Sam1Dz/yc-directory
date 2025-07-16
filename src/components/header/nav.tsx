@@ -13,7 +13,7 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 
-import styles from '~/styles/components/header.module.scss';
+import classes from '~/styles/components/header.module.scss';
 import { useAuth } from '~/libs/auth';
 import { mantineBreakpoints } from '~/libs/mantine/breakpoint';
 
@@ -105,7 +105,7 @@ export function NavHeader(props: UserMenuProps) {
 
       <Group align="center" gap="lg">
         {!isMobile && <Button variant="light">Create</Button>}
-        <UnstyledButton onClick={open} className={styles.profileDrawer}>
+        <UnstyledButton onClick={open} className={classes.profileDrawer}>
           <Group gap="xs" align="center">
             <Avatar src={user.image} size={36} />
           </Group>

@@ -1,15 +1,26 @@
-.container {
+@use '../../core/mantine' as mantine;
+
+.container_hero {
   width: 100%;
-  min-height: 34rem;
-  padding: 1.5rem 2.5rem;
+  min-height: mantine.rem(544px);
+  padding: mantine.rem(24px) mantine.rem(40px);
 
   .heading {
-    padding: 0.75rem 1.5rem;
-    margin: 1.25rem 0;
+    padding: mantine.rem(12px) mantine.rem(24px);
+    margin: mantine.rem(20px) 0;
     max-width: var(--mantine-breakpoint-md);
+    background: light-dark(var(--mantine-color-dark-7), white);
+    color: light-dark(var(--mantine-color-dark-0), black);
+    font-size: mantine.rem(54px);
+    line-height: mantine.rem(64px);
+
+    @include mantine.smaller-than(mantine.$mantine-breakpoint-xs) {
+      font-size: mantine.rem(36px);
+      line-height: mantine.rem(46px);
+    }
   }
 
-  .subHeading {
+  .sub_heading {
     overflow-wrap: break-word;
     max-width: var(--mantine-breakpoint-sm);
   }

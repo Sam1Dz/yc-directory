@@ -5,19 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86d80ad3-77d2-428e-8d07-191889de4e6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/styles/components/(main)/hero.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/core/_components.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/core/_mantine.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/core/_utils.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/routes/(main)/index.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/(main)/hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/(main)/hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/(main)/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/(main)/search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/mantine/breakpoint.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/mantine/breakpoint.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/mantine/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/mantine/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/(main)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/(main)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/__root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/__root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/(main)/hero.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/header.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/_breakpoints.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/(main)/hero.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/(main)/hero.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/(main)/search.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/(main)/search.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/header.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,29 +63,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "bun",
-    "npm.dev.executor": "Run",
-    "npm.start.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Projects\\Applications\\Portfolio\\yc-directory\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.sourceCode.SCSS",
-    "ts.external.directory.path": "D:\\Projects\\Applications\\Portfolio\\yc-directory\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;bun&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Projects\\Applications\\Portfolio\\yc-directory\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.SCSS&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\Applications\\Portfolio\\yc-directory\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -92,6 +97,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\Applications\Portfolio\yc-directory\src\styles\core" />
       <recent name="D:\Projects\Applications\Portfolio\yc-directory\src\libs\mantine\color" />
       <recent name="D:\Projects\Applications\Portfolio\yc-directory\src\routes\api\auth" />
     </key>
@@ -148,7 +154,10 @@
       <workItem from="1752483703919" duration="3679000" />
       <workItem from="1752495915907" duration="5235000" />
       <workItem from="1752545918633" duration="3265000" />
-      <workItem from="1752549254804" duration="6029000" />
+      <workItem from="1752549254804" duration="6477000" />
+      <workItem from="1752567276061" duration="5422000" />
+      <workItem from="1752583393009" duration="22000" />
+      <workItem from="1752633230797" duration="8538000" />
     </task>
     <servers />
   </component>
